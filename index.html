@@ -1,0 +1,24 @@
+<html>
+  <body>
+
+    <div id='container'>
+      <h2> Enter a Name and Hit The Button</h2>
+      <input id='name'>
+      <button id='change-name'>Say Hello</button>
+      <h3 id='name-display'></h3>
+    </div>
+
+    <script type='module'>
+      import {sayHello} from './hello.mjs';
+
+      let displayArea = document.getElementById('name-display');
+      let input = document.getElementById('name');
+      let button = document.getElementById('change-name');
+
+      button.addEventListener('click', () => {
+        displayArea.innerHTML = sayHello(input.value);
+      });
+    </script>
+
+  </body>
+</html>
